@@ -1,4 +1,4 @@
-// Written by: Christopher Gholmieh
+// Written by: Christopher Gholmieh & Bryan Hsu
 // Package:
 package Components;
 
@@ -55,6 +55,11 @@ public class TreeNode {
 
     public void set_right(TreeNode right) {
         this.right = right;
+    }
+
+    // CHeckers:
+    public boolean is_dead_end() {
+        return (left == null && right == null);
     }
 
     // Methods:

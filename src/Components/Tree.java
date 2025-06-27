@@ -1,4 +1,4 @@
-// Written by: Christopher Gholmieh
+// Written by: Christopher Gholmieh & Bryan Hsu
 // Package:
 package Components;
 
@@ -24,6 +24,28 @@ public class Tree {
 
     // Methods:
     public void advance_once() {
+        // Validation:
+        if (head == null || current == null) {
+            return; // No nodes to advance
+        }
 
+        // Variables (Assignment):
+        // Evaluation:
+        int evaluation = current.evaluate();
+
+        // Logic:
+        if (current.is_dead_end()) {
+            current = head;
+        } else {
+            if (evaluation == 0) {
+                current = current.get_left();
+            } else if (evaluation == 1) {
+                current = current.get_right();
+            } else {
+                throw new IllegalStateException("Invalid evaluation result: " + evaluation);
+            }
+        }
     }
+
+    //TODO: Write something like append_node for this? It has to be positioned somehow
 }
