@@ -39,7 +39,7 @@ public class Tree {
         } else {
             if (evaluation == 0) {
                 current = current.get_left();
-            } else if (evaluation == 1) {
+            } else if (evaluation == 1 && current.get_right() != null) {
                 current = current.get_right();
             } else {
                 throw new IllegalStateException("Invalid evaluation result: " + evaluation);
